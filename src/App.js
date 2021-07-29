@@ -76,25 +76,27 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="title">Movie App</h1>
       {user ? (
         <div>
           <Navbar handleLogout={handleLogout} />
           <MainPage />
         </div>
       ) : (
-        <Login
-          email={email}
-          setEmail={setEmail}
-          password={password}
-          setPassword={setPassword}
-          handleLogin={handleLogin}
-          handleRegister={handleRegister}
-          isLoggedIn={isLoggedIn}
-          setIsLoggedIn={setIsLoggedIn}
-          emailErr={emailErr}
-          passErr={passErr}
-        />
+        <div>
+          <h1 className="title">Movie App</h1>
+          <Login
+            email={email}
+            setEmail={setEmail}
+            password={password}
+            setPassword={setPassword}
+            handleLogin={handleLogin}
+            handleRegister={handleRegister}
+            isLoggedIn={isLoggedIn}
+            setIsLoggedIn={setIsLoggedIn}
+            emailErr={emailErr}
+            passErr={passErr}
+          />
+        </div>
       )}
     </div>
   );

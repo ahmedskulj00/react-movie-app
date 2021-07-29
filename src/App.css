@@ -8,10 +8,14 @@ body {
   color: black;
 }
 
+/*App.js component*/
+
 .title {
   text-align: center;
   font-size: 5em;
 }
+
+/*Login.js component*/
 
 .login-container {
   display: flex;
@@ -32,7 +36,6 @@ input {
   border: none;
   border-bottom: 1px solid black;
   background: none;
-
   font-size: 1em;
 }
 
@@ -67,4 +70,102 @@ span {
 span:hover {
   color: black;
   transition: 0.5s;
+}
+
+/*Navbar.js component*/
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.btn-logout {
+  width: 10em;
+  height: 3em;
+  outline: none;
+  background: none;
+  border: 1px solid black;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+.btn-logout:hover {
+  background-color: black;
+  color: white;
+  transition: 0.5s;
+}
+
+/*MainPage.js component*/
+
+.btn-switch {
+  display: block;
+  margin: 0 auto;
+  width: 10em;
+  height: 3em;
+  outline: none;
+  background: none;
+  border: 1px solid black;
+  font-size: 0.9em;
+  cursor: pointer;
+  margin-bottom: 50px;
+}
+
+.btn-switch:hover {
+  background-color: black;
+  color: white;
+  transition: 0.5s;
+}
+
+.genre-type {
+  text-align: center;
+  line-height: 1em;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5em;
+}
+
+.show-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5em;
+}
+
+img {
+  width: 400px;
+  height: 400px;
+  display: block;
+  margin: 0 auto;
+}
+
+.movie-title {
+  text-align: center;
+}
+
+.show-title {
+  text-align: center;
+}
+
+.release-date {
+  font-size: 1.3em;
+  text-align: center;
+}
+
+.description {
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.rating {
+  font-size: 1.5em;
+  text-align: center;
 }

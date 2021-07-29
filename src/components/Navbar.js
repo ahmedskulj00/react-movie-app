@@ -3,9 +3,11 @@ import React from "react";
 const Navbar = (props) => {
   const { handleLogout } = props;
   return (
-    <div>
+    <div className="navbar">
       <h1>Movie App</h1>
-      <button onClick={handleLogout}>Logout</button>
+      <button className="btn-logout" onClick={handleLogout}>
+        Logout
+      </button>
     </div>
   );
 };

@@ -57,10 +57,18 @@ const MainPage = () => {
 
   return (
     <div>
-      <button onClick={switchGenre}>Switch</button>
+      <div className="search-bar">
+        <input type="text" onChange={handleChange} />
+      </div>
+      <button className="btn-switch" onClick={switchGenre}>
+        {genre ? (
+          <p className="genre-type">Tv Show</p>
+        ) : (
+          <p className="genre-type">Movie</p>
+        )}
+      </button>
       {genre ? (
         <div className="movie-grid">
-          <input type="text" onChange={handleChange} />
           {filteredMovies.map((movie) => {
             return (
               <div>
@@ -70,16 +78,16 @@ const MainPage = () => {
                     movie.poster_path
                   }
                 />
-                <h2>{movie.title}</h2>
-                <p>{movie.release_date}</p>
-                <p>{movie.overview}</p>
+                <h2 className="movie-title">{movie.title}</h2>
+                <p className="release-date">{movie.release_date}</p>
+                <p className="description">{movie.overview}</p>
+                <p className="rating">Rating: {movie.vote_average}</p>
               </div>
             );
           })}
         </div>
       ) : (
-        <div className="movie-grid">
-          <input type="text" onChange={handleChange} />
+        <div className="show-grid">
           {filteredShows.map((show) => {
             return (
               <div>
@@ -88,9 +96,10 @@ const MainPage = () => {
                     "https://www.themoviedb.org/t/p/original" + show.poster_path
                   }
                 />
-                <h2>{show.name}</h2>
-                <p>{show.first_air_date}</p>
-                <p>{show.overview}</p>
+                <h2 className="show-title">{show.name}</h2>
+                <p className="release-date">{show.first_air_date}</p>
+                <p className="description">{show.overview}</p>
+                <p className="rating">Rating: {show.vote_average}</p>
               </div>
             );
           })}
