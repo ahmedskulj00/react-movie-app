@@ -76,6 +76,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1 className="title">Movie App</h1>
       {user ? (
         <div>
           <Navbar handleLogout={handleLogout} />

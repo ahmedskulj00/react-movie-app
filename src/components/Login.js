@@ -17,35 +17,40 @@ const Login = (props) => {
   return (
     <div className="login-container">
       <div className="login-screen">
-        <label>Username</label>
         <input
           type="text"
           required
           value={email}
+          placeholder="Username"
           onChange={(e) => setEmail(e.target.value)}
         />
-        <p>{emailErr}</p>
-        <label>Password</label>
+        <p className="error-message">{emailErr}</p>
+
         <input
           type="password"
           required
           value={password}
+          placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <p>{passErr}</p>
+        <p className="error-message">{passErr}</p>
         <div>
           {isLoggedIn ? (
             <div>
-              <button onClick={handleLogin}>Sign in</button>
-              <p>
+              <button className="btn-auth" onClick={handleLogin}>
+                Sign in
+              </button>
+              <p className="auth-message">
                 Register, if you haven't already{" "}
                 <span onClick={() => setIsLoggedIn(!isLoggedIn)}>Register</span>
               </p>
             </div>
           ) : (
             <div>
-              <button onClick={handleRegister}>Sign up</button>
-              <p>
+              <button className="btn-auth" onClick={handleRegister}>
+                Sign up
+              </button>
+              <p className="auth-message">
                 Login if you have an account{" "}
                 <span onClick={() => setIsLoggedIn(!isLoggedIn)}>Login</span>
               </p>

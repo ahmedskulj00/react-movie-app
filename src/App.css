@@ -1,10 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+* {
+  font-family: "Quicksand", sans-serif;
+}
+
 body {
-  background-color: #4b0082;
+  color: black;
+}
+
+.title {
+  text-align: center;
+  font-size: 5em;
 }
 
 .login-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 10%;
+}
+
+label {
+  padding-right: 3em;
+}
+
+input {
+  width: 30em;
+  height: 30px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+  background: none;
+
+  font-size: 1em;
+}
+
+.btn-auth {
+  display: block;
+  margin: 0 auto;
+  width: 10em;
+  height: 3em;
+  outline: none;
+  background: none;
+  border: 1px solid black;
+  font-size: 0.9em;
+  cursor: pointer;
+  margin-bottom: 50px;
+}
+
+.btn-auth:hover {
+  background-color: black;
+  color: white;
+  transition: 0.5s;
+}
+
+.auth-message {
+  text-align: center;
+}
+
+span {
+  color: red;
+  cursor: pointer;
+}
+
+span:hover {
+  color: black;
+  transition: 0.5s;
 }
