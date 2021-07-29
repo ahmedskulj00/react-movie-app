@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import fire from "./components/Firebase";
+import Login from "./components/Login";
 
 function App() {
   const [user, setUser] = useState("");
@@ -11,6 +12,10 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLogin = () => {
+    setEmail("");
+    setPassword("");
+    setEmailErr("");
+    setPassErr("");
     fire
       .auth()
       .signInWithEmailAndPassword(email, password)
@@ -29,6 +34,10 @@ function App() {
   };
 
   const handleRegister = () => {
+    setEmail("");
+    setPassword("");
+    setEmailErr("");
+    setPassErr("");
     fire
       .auth()
       .createUserWithEmailAndPassword(email, password)
@@ -63,7 +72,29 @@ function App() {
     authListener();
   }, []);
 
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      {user ? (
+        <div>
+          <h1>Welcome</h1>
+          <button onClick={handleLogout}>Logout</button>
+        </div>
+      ) : (
+        <Login
+          email={email}
+          setEmail={setEmail}
+          password={password}
+          setPassword={setPassword}
+          handleLogin={handleLogin}
+          handleRegister={handleRegister}
+          isLoggedIn={isLoggedIn}
+          setIsLoggedIn={setIsLoggedIn}
+          emailErr={emailErr}
+          passErr={passErr}
+        />
+      )}
+    </div>
+  );
 }
 
 export default App;
