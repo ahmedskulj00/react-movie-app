@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import fire from "./components/Firebase";
 import Login from "./components/Login";
+import MainPage from "./components/MainPage";
+import Navbar from "./components/Navbar";
 
 function App() {
   const [user, setUser] = useState("");
@@ -76,8 +78,8 @@ function App() {
     <div className="App">
       {user ? (
         <div>
-          <h1>Welcome</h1>
-          <button onClick={handleLogout}>Logout</button>
+          <Navbar handleLogout={handleLogout} />
+          <MainPage />
         </div>
       ) : (
         <Login
