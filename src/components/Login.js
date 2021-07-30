@@ -21,7 +21,7 @@ const Login = (props) => {
           type="text"
           required
           value={email}
-          placeholder="Username"
+          placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
         />
         <p className="error-message">{emailErr}</p>

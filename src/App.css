@@ -188,3 +188,47 @@ input[type="radio"] {
   color: white;
   transition: 0.5s;
 }
+
+@media screen and (max-width: 414px) {
+  .title {
+    font-size: 3em;
+  }
+  .login-container {
+    padding: 20%;
+  }
+  input {
+    width: 95%;
+  }
+  .movie-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .show-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  img {
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 3em;
+  }
+  .login-container {
+    padding: 20%;
+  }
+  input {
+    width: 95%;
+  }
+  .movie-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .show-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  img {
+    width: 100%;
+    object-fit: contain;
+  }
+}

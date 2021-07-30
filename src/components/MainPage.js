@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import "../App.css";
 const MainPage = () => {
   const [movies, setMovies] = useState([]);
   const [tvShows, setTvShows] = useState([]);
