@@ -95,7 +95,7 @@ const MainPage = () => {
                 <p className="rating">Rating: {movie.vote_average}</p>
                 <div key={movie.id}>
                   {[...Array(5)].map((star, i) => {
-                    const ratingValue = i + 1;
+                    const ratingValue = i + 1; //this functionality is still w.i.p., what I tried to make with this are 5 stars that show on screen and users can rate movie / tv shows based on amount of stars they clicked, but I have a bug where if you rate one movie / tv show that rating is then applied for every movie / tv show, and I do not know how to fix it :(
                     return (
                       <label>
                         <input
@@ -136,7 +136,7 @@ const MainPage = () => {
                 <p className="rating">Rating: {show.vote_average}</p>
                 <div key={show.id}>
                   {[...Array(5)].map((star, i) => {
-                    const ratingValue = i + 1;
+                    const ratingValue = i + 1; //this functionality is still w.i.p., what I tried to make with this are 5 stars that show on screen and users can rate movie / tv shows based on amount of stars they clicked, but I have a bug where if you rate one movie / tv show that rating is then applied for every movie / tv show, and I do not know how to fix it :(
                     return (
                       <label>
                         <input
