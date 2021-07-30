@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
 import { FaStar } from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const MainPage = () => {
   const [movies, setMovies] = useState([]);
   const [tvShows, setTvShows] = useState([]);
@@ -39,6 +42,10 @@ const MainPage = () => {
       });
   }, []);
 
+  useEffect(() => {
+    AOS.init({ duration: 1000 }); //this useEffect is used to load animation on scroll library
+  }, []);
+
   //This function is used for filtering when searching for movies, you can search for title or for description of a movie, this function converts your search into lower case and then it checks if there is a movie with that title or description
   const filteredMovies = movies.filter(
     (movie) =>
@@ -72,7 +79,7 @@ const MainPage = () => {
       </div>
       <button className="btn-switch" onClick={switchGenre}>
         {genre ? (
-          <p className="genre-type">Tv Shows</p>
+          <p className="genre-type">TV Shows</p>
         ) : (
           <p className="genre-type">Movies</p>
         )}
@@ -82,7 +89,7 @@ const MainPage = () => {
           {filteredMovies.slice(0, visible).map((movie) => {
             //displaying movies from api using map, as well as slice to show only 10 movies
             return (
-              <div key={movie.id}>
+              <div key={movie.id} data-aos="fade-up">
                 <img
                   src={
                     "https://www.themoviedb.org/t/p/original" +
@@ -124,7 +131,7 @@ const MainPage = () => {
           {filteredShows.slice(0, visible).map((show) => {
             //displaying tv shows from api using map, as well as slice to show only 10 tv shows
             return (
-              <div>
+              <div key={show.id} data-aos="fade-up">
                 <img
                   src={
                     "https://www.themoviedb.org/t/p/original" + show.poster_path
