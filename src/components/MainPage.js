@@ -71,9 +71,9 @@ const MainPage = () => {
       </div>
       <button className="btn-switch" onClick={switchGenre}>
         {genre ? (
-          <p className="genre-type">Tv Show</p>
+          <p className="genre-type">Tv Shows</p>
         ) : (
-          <p className="genre-type">Movie</p>
+          <p className="genre-type">Movies</p>
         )}
       </button>
       {genre ? (
