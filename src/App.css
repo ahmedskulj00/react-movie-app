@@ -189,6 +189,10 @@ input[type="radio"] {
   transition: 0.5s;
 }
 
+.star {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 414px) {
   .title {
     font-size: 3em;

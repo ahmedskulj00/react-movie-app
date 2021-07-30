@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
+import { FaStar } from "react-icons/fa";
 const MainPage = () => {
   const [movies, setMovies] = useState([]);
   const [tvShows, setTvShows] = useState([]);
   const [genre, setGenre] = useState(false);
   const [search, setSearch] = useState("");
-
+  const [rating, setRating] = useState(null);
   const [visible, setVisible] = useState(10);
   /* For this project I have used themoviedb api and here we can see two links, one for movies and other one for tv shows*/
   const URL_MOVIES =
@@ -92,6 +93,25 @@ const MainPage = () => {
                 <p className="release-date">{movie.release_date}</p>
                 <p className="description">{movie.overview}</p>
                 <p className="rating">Rating: {movie.vote_average}</p>
+                <div key={movie.id}>
+                  {[...Array(5)].map((star, i) => {
+                    const ratingValue = i + 1;
+                    return (
+                      <label>
+                        <input
+                          type="radio"
+                          value={ratingValue}
+                          onClick={() => setRating(ratingValue)}
+                        />
+                        <FaStar
+                          className="star"
+                          color={ratingValue <= rating ? "black" : "gray"}
+                        />
+                      </label>
+                    );
+                  })}
+                  <h4>W.I.P.</h4>
+                </div>
               </div>
             );
           })}
@@ -114,6 +134,25 @@ const MainPage = () => {
                 <p className="release-date">{show.first_air_date}</p>
                 <p className="description">{show.overview}</p>
                 <p className="rating">Rating: {show.vote_average}</p>
+                <div key={show.id}>
+                  {[...Array(5)].map((star, i) => {
+                    const ratingValue = i + 1;
+                    return (
+                      <label>
+                        <input
+                          type="radio"
+                          value={ratingValue}
+                          onClick={() => setRating(ratingValue)}
+                        />
+                        <FaStar
+                          className="star"
+                          color={ratingValue <= rating ? "black" : "gray"}
+                        />
+                      </label>
+                    );
+                  })}
+                  <h4>W.I.P.</h4>
+                </div>
               </div>
             );
           })}
