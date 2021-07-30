@@ -1,3 +1,5 @@
+/*This component has everything needed for firebase to work with this project */
+
 import firebase from "firebase";
 
 var firebaseConfig = {

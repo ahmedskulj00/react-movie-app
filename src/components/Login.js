@@ -1,5 +1,6 @@
 import React from "react";
 import "../App.css";
+/* Here we can see that I transfered all the necessary functions that are needed for this component using props*/
 const Login = (props) => {
   const {
     email,
@@ -22,7 +23,7 @@ const Login = (props) => {
           required
           value={email}
           placeholder="Email"
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)} // Here we have an input for email, with onChange that allows us to take value from input and to put it into a state called email
         />
         <p className="error-message">{emailErr}</p>
 
@@ -31,11 +32,11 @@ const Login = (props) => {
           required
           value={password}
           placeholder="Password"
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={(e) => setPassword(e.target.value)} // Same thing, but this time it is for password
         />
         <p className="error-message">{passErr}</p>
         <div>
-          {isLoggedIn ? (
+          {isLoggedIn ? ( // Here I used ternary operator which help users to switch between log in and sign up, basically I just used state from app.js called isLoggedIn to help me with this, because it is a boolean state
             <div>
               <button className="btn-auth" onClick={handleLogin}>
                 Sign in
