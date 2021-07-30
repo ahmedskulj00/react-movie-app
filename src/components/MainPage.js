@@ -6,6 +6,8 @@ const MainPage = () => {
   const [genre, setGenre] = useState(false);
   const [search, setSearch] = useState("");
 
+  const [visible, setVisible] = useState(10);
+
   const URL_MOVIES =
     "https://api.themoviedb.org/3/movie/top_rated?api_key=dcc05348160351e93754038666f1d67d&language=en-US&page=1";
 
@@ -17,7 +19,6 @@ const MainPage = () => {
       .then((response) => response.json())
       .then((data) => {
         setMovies(Object.values(data)[1]);
-        console.log(data);
         console.log(Object.values(data)[1]);
       });
   }, []);
@@ -30,7 +31,6 @@ const MainPage = () => {
       .then((response) => response.json())
       .then((data) => {
         setTvShows(Object.values(data)[1]);
-        console.log(data);
         console.log(Object.values(data)[1]);
       });
   }, []);
@@ -55,6 +55,10 @@ const MainPage = () => {
     }
   };
 
+  const showMoreItems = () => {
+    setVisible((prevValue) => prevValue + 10);
+  };
+
   return (
     <div>
       <div className="search-bar">
@@ -69,9 +73,9 @@ const MainPage = () => {
       </button>
       {genre ? (
         <div className="movie-grid">
-          {filteredMovies.map((movie) => {
+          {filteredMovies.slice(0, visible).map((movie) => {
             return (
-              <div>
+              <div key={movie.id}>
                 <img
                   src={
                     "https://www.themoviedb.org/t/p/original" +
@@ -85,10 +89,13 @@ const MainPage = () => {
               </div>
             );
           })}
+          <button className="btn-showmore" onClick={showMoreItems}>
+            Load more
+          </button>
         </div>
       ) : (
         <div className="show-grid">
-          {filteredShows.map((show) => {
+          {filteredShows.slice(0, visible).map((show) => {
             return (
               <div>
                 <img
@@ -103,6 +110,9 @@ const MainPage = () => {
               </div>
             );
           })}
+          <button className="btn-showmore" onClick={showMoreItems}>
+            Load more
+          </button>
         </div>
       )}
     </div>

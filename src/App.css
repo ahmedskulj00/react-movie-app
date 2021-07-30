@@ -25,10 +25,6 @@ body {
   padding: 10%;
 }
 
-label {
-  padding-right: 3em;
-}
-
 input {
   width: 30em;
   height: 30px;
@@ -168,4 +164,27 @@ img {
 .rating {
   font-size: 1.5em;
   text-align: center;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.btn-showmore {
+  display: block;
+  margin: 0 auto;
+  width: 10em;
+  height: 3em;
+  outline: none;
+  background: none;
+  border: 1px solid black;
+  font-size: 0.9em;
+  cursor: pointer;
+  margin-bottom: 50px;
+}
+
+.btn-showmore:hover {
+  background-color: black;
+  color: white;
+  transition: 0.5s;
 }
